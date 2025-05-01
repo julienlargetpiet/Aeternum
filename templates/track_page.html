@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" href="data:," type="image/x-icon">
+    <title>Track</title>
+</head>
+<body>
+
+<style>
+table {
+    border-collapse: collapse;
+    width: 70%; 
+}
+td {
+    border: 1px solid black;
+    width: 100px; 
+    text-align: center;
+    padding: 8px;
+    background-color: #c2b6b0;
+}
+
+th {
+    border: 1px solid black;
+    width: 100px; 
+    text-align: center;
+    padding: 8px;
+    background-color: #ebe5e2;
+}
+
+</style>
+
+<a href="../choose/{{.NextURL}}">Choose Another Year</a> <br>
+
+<a href="../calculate_page/{{.Year}}{{.NextURL}}">Calculate</a>
+
+<br><br>
+
+<center>
+
+<b>Choose the day you want to provide work hours for {{.Year}}</b>
+
+<br><br>
+
+<table style="border-collapse: collapse;">
+<tr>
+  <td><b> January </b></td>
+  <td><b> February </b></td>
+  <td><b> March </b></td>
+  <td><b> April </b></td>
+  <td><b> May </b></td>
+  <td><b> June </b></td>
+  <td><b> July </b></td>
+  <td><b> August </b></td>
+  <td><b> September </b></td>
+  <td><b> December </b></td>
+  <td><b> October </b></td>
+  <td><b> December </b></td>
+</tr>
+
+{{range $val := .Days}}
+
+<tr>
+  <th><a href="../see_day/{{$val}}-01-{{$.Year}}{{$.NextURL}}">{{$val}}</a></th>
+  <th>
+      {{if lt $val 29}}
+      <a href="../see_day/{{$val}}-02-{{$.Year}}{{$.NextURL}}">{{$val}}</a>
+      {{else if eq $val 29}}
+        {{if $.Leap}} 
+        <a href="../see_day/{{$val}}-02-{{$.Year}}{{$.NextURL}}">{{$val}}</a>
+        {{end}}
+      {{end}}
+  </th>
+  <th><a href="../see_day/{{$val}}-03-{{$.Year}}{{$.NextURL}}">{{$val}}</a></th>
+  <th>{{if lt $val 31}}
+      <a href="../see_day/{{$val}}-04-{{$.Year}}{{$.NextURL}}">{{$val}}</a>
+      {{end}}
+  </th>
+  <th><a href="../see_day/{{$val}}-05-{{$.Year}}{{$.NextURL}}">{{$val}}</a></th>
+  <th>
+    {{if lt $val 31}}
+      <a href="../see_day/{{$val}}-06-{{$.Year}}{{$.NextURL}}">{{$val}}</a>
+    {{end}}
+  </th>
+  <th><a href="../see_day/{{$val}}-07-{{$.Year}}{{$.NextURL}}">{{$val}}</a></th>
+  <th><a href="../see_day/{{$val}}-08-{{$.Year}}{{$.NextURL}}">{{$val}}</a></th>
+  <th>
+   {{if lt $val 31}}
+      <a href="../see_day/{{$val}}-09-{{$.Year}}{{$.NextURL}}">{{$val}}</a>
+    {{end}}
+  </th>
+  <th><a href="../see_day/{{$val}}-10-{{$.Year}}{{$.NextURL}}">{{$val}}</a></th>
+  <th>
+    {{if lt $val 31}}
+      <a href="../see_day/{{$val}}-11-{{$.Year}}{{$.NextURL}}">{{$val}}</a>
+    {{end}}
+  </th>
+  <th><a href="../see_day/{{$val}}-12-{{$.Year}}{{$.NextURL}}">{{$val}}</a></th>
+</tr>
+
+{{end}}
+
+</table>
+
+<br><br>
+
+</center>
+
+</body>
+
+

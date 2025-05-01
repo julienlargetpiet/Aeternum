@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Provide Page</title>
+</head>
+<body>
+
+<a href="../see_day/{{.Date}}{{.NextURL}}">Go Back</a>
+
+<br>
+<br>
+
+<center>
+
+<b>{{.Date}}</b> <br>
+
+<form action="../process_provide/{{.Date}}{{.NextURL}}" method="POST">
+
+Provide Work Hours (example: 9h30-10h45;11h15-12h00;...;15h00-18h30)
+
+<br>
+
+<textarea name="work_hours" rows="1" cols="38"></textarea>
+
+<br><br>
+
+<input type="submit" value="Submit">
+
+</form>
+
+</center>
+
+</body>

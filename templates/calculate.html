@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Index</title>
+</head>
+<body>
+
+<form action="../track_page/{{.NextURL}}" method="GET">
+<textarea name="year" style="display:none;">{{.Year}}</textarea>
+<input type="submit" value="Calendar">
+</form>
+
+<br>
+
+<center>
+
+<form action="../calculate/{{.Year}}{{.NextURL}}" method="POST">
+
+Begin Date: <br>
+
+<textarea name="bgn_date" rows="1" cols="18"></textarea>
+
+<br>
+
+End Date: <br>
+
+<textarea name="end_date" rows="1" cols="18"></textarea>
+
+<br>
+
+<input type="submit" value="Calculate">
+
+</form>
+
+</center>
+
+</body>
+
+

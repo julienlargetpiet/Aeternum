@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>See Day</title>
+</head>
+<body>
+
+<form action="../track_page/{{.NextURL}}" method="GET">
+<textarea name="year" style="display:none;">{{.Year}}</textarea>
+<input type="submit" value="Calendar">
+</form>
+<br>
+<br>
+
+<center>
+
+<b>{{.Date}}</b>
+
+<br><br>
+{{if .Provided}}
+
+<p>Work Hours: </p>
+<br>
+<b> {{.WorkHours}} H {{.WorkMinutes}} </b> <br>
+
+<a href="../provide_page/{{.Date}}{{.NextURL}}">Modify Work Hours</a>
+
+{{else}}
+
+<br>
+<p>This day has not provided any work hour</p>
+<br>
+
+<a href="../provide_page/{{.Date}}{{.NextURL}}">Provide Work Hours</a>
+
+{{end}}
+</center>
+
+</body>
+
+

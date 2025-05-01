@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Result</title>
+</head>
+<body>
+
+<form action="../track_page/{{.NextURL}}" method="GET">
+<textarea name="year" style="display:none;">{{.Year}}</textarea>
+<input type="submit" value="Calendar">
+</form>
+<br>
+<br>
+
+<center>
+
+For this range of time, you worked <b>{{.Result}}</b> hours.
+
+</center>
+
+</body>
+
