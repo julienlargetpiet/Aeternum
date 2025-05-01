@@ -19,6 +19,8 @@ Because the server does not communicate an authentication cookie, and that pasin
 ## Database
 
 ```
+CREATE DATABASE Aeternum
+USE Aeternum
 CREATE TABLE credentials (username VARCHAR(35), password VARCHAR(16), temp_password TINYTEXT);
 ```
 
